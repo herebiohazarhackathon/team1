@@ -52,10 +52,12 @@ OBJECTS_DIR   = ./
 
 SOURCES       = ../../Files/team1.cpp \
 		../../Files/class6_7.cpp \
-		../../Files/class8_9.cpp 
+		../../Files/class8_9.cpp \
+		../../Files/class10.cpp 
 OBJECTS       = team1.o \
 		class6_7.o \
-		class8_9.o
+		class8_9.o \
+		class10.o
 DIST          = /media/yevhenii/QT/5.10.1/gcc_64/mkspecs/features/spec_pre.prf \
 		/media/yevhenii/QT/5.10.1/gcc_64/mkspecs/common/unix.conf \
 		/media/yevhenii/QT/5.10.1/gcc_64/mkspecs/common/linux.conf \
@@ -240,9 +242,11 @@ DIST          = /media/yevhenii/QT/5.10.1/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Files/team1.pro ../../Files/team1.h \
 		../../Files/team1_global.h \
 		../../Files/class6_7.h \
-		../../Files/class8_9.h ../../Files/team1.cpp \
+		../../Files/class8_9.h \
+		../../Files/class10.h ../../Files/team1.cpp \
 		../../Files/class6_7.cpp \
-		../../Files/class8_9.cpp
+		../../Files/class8_9.cpp \
+		../../Files/class10.cpp
 QMAKE_TARGET  = team1
 DESTDIR       = 
 TARGET        = libteam1.so.1.0.0
@@ -653,8 +657,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../../QT/5.10.1/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../../Files/team1.h ../../Files/team1_global.h ../../Files/class6_7.h ../../Files/class8_9.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../../Files/team1.cpp ../../Files/class6_7.cpp ../../Files/class8_9.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../../Files/team1.h ../../Files/team1_global.h ../../Files/class6_7.h ../../Files/class8_9.h ../../Files/class10.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../../Files/team1.cpp ../../Files/class6_7.cpp ../../Files/class8_9.cpp ../../Files/class10.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -726,7 +730,8 @@ team1.o: ../../Files/team1.cpp ../../Files/team1.h \
 		../../../../QT/5.10.1/gcc_64/include/QtCore/qmutex.h \
 		../../../../QT/5.10.1/gcc_64/include/QtCore/qnumeric.h \
 		../../../../QT/5.10.1/gcc_64/include/QtCore/qversiontagging.h \
-		../../Files/class6_7.h
+		../../Files/class6_7.h \
+		../../Files/class8_9.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o team1.o ../../Files/team1.cpp
 
 class6_7.o: ../../Files/class6_7.cpp ../../Files/class6_7.h
@@ -734,6 +739,9 @@ class6_7.o: ../../Files/class6_7.cpp ../../Files/class6_7.h
 
 class8_9.o: ../../Files/class8_9.cpp ../../Files/class8_9.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o class8_9.o ../../Files/class8_9.cpp
+
+class10.o: ../../Files/class10.cpp ../../Files/class10.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o class10.o ../../Files/class10.cpp
 
 ####### Install
 
