@@ -51,9 +51,11 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../../Files/team1.cpp \
-		../../Files/class6_7.cpp 
+		../../Files/class6_7.cpp \
+		../../Files/class8_9.cpp 
 OBJECTS       = team1.o \
-		class6_7.o
+		class6_7.o \
+		class8_9.o
 DIST          = /media/yevhenii/QT/5.10.1/gcc_64/mkspecs/features/spec_pre.prf \
 		/media/yevhenii/QT/5.10.1/gcc_64/mkspecs/common/unix.conf \
 		/media/yevhenii/QT/5.10.1/gcc_64/mkspecs/common/linux.conf \
@@ -217,6 +219,7 @@ DIST          = /media/yevhenii/QT/5.10.1/gcc_64/mkspecs/features/spec_pre.prf \
 		/media/yevhenii/QT/5.10.1/gcc_64/mkspecs/features/qt_config.prf \
 		/media/yevhenii/QT/5.10.1/gcc_64/mkspecs/linux-g++/qmake.conf \
 		/media/yevhenii/QT/5.10.1/gcc_64/mkspecs/features/spec_post.prf \
+		../../Files/.qmake.stash \
 		/media/yevhenii/QT/5.10.1/gcc_64/mkspecs/features/exclusive_builds.prf \
 		/media/yevhenii/QT/5.10.1/gcc_64/mkspecs/features/toolchain.prf \
 		/media/yevhenii/QT/5.10.1/gcc_64/mkspecs/features/default_pre.prf \
@@ -236,8 +239,10 @@ DIST          = /media/yevhenii/QT/5.10.1/gcc_64/mkspecs/features/spec_pre.prf \
 		/media/yevhenii/QT/5.10.1/gcc_64/mkspecs/features/lex.prf \
 		../../../Files/team1.pro ../../Files/team1.h \
 		../../Files/team1_global.h \
-		../../Files/class6_7.h ../../Files/team1.cpp \
-		../../Files/class6_7.cpp
+		../../Files/class6_7.h \
+		../../Files/class8_9.h ../../Files/team1.cpp \
+		../../Files/class6_7.cpp \
+		../../Files/class8_9.cpp
 QMAKE_TARGET  = team1
 DESTDIR       = 
 TARGET        = libteam1.so.1.0.0
@@ -429,6 +434,7 @@ Makefile: ../../Files/team1.pro ../../../../QT/5.10.1/gcc_64/mkspecs/features/sp
 		../../../../QT/5.10.1/gcc_64/mkspecs/features/qt_config.prf \
 		../../../../QT/5.10.1/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../../QT/5.10.1/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../../QT/5.10.1/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../../QT/5.10.1/gcc_64/mkspecs/features/toolchain.prf \
 		../../../../QT/5.10.1/gcc_64/mkspecs/features/default_pre.prf \
@@ -612,6 +618,7 @@ Makefile: ../../Files/team1.pro ../../../../QT/5.10.1/gcc_64/mkspecs/features/sp
 ../../../../QT/5.10.1/gcc_64/mkspecs/features/qt_config.prf:
 ../../../../QT/5.10.1/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../../../../QT/5.10.1/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../../QT/5.10.1/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../../../QT/5.10.1/gcc_64/mkspecs/features/toolchain.prf:
 ../../../../QT/5.10.1/gcc_64/mkspecs/features/default_pre.prf:
@@ -646,8 +653,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../../QT/5.10.1/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../../Files/team1.h ../../Files/team1_global.h ../../Files/class6_7.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../../Files/team1.cpp ../../Files/class6_7.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../../Files/team1.h ../../Files/team1_global.h ../../Files/class6_7.h ../../Files/class8_9.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../../Files/team1.cpp ../../Files/class6_7.cpp ../../Files/class8_9.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -724,6 +731,9 @@ team1.o: ../../Files/team1.cpp ../../Files/team1.h \
 
 class6_7.o: ../../Files/class6_7.cpp ../../Files/class6_7.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o class6_7.o ../../Files/class6_7.cpp
+
+class8_9.o: ../../Files/class8_9.cpp ../../Files/class8_9.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o class8_9.o ../../Files/class8_9.cpp
 
 ####### Install
 
